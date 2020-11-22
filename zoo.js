@@ -20,7 +20,7 @@ for (let s in suits) {
 }
 console.log(cards);
 
-function ranCard() {
+function start() {
     let randomNum = Math.floor((Math.random() * 52));
     output.innerHTML += "<span style='color:" + cards[randomNum].bgcolor + "'> &" + cards[randomNum].icon + ";" + cards[randomNum].cardnum + "</span>     ";
 }
