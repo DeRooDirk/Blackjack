@@ -63,7 +63,7 @@ function deal() {
         dealerCard.push(cards[cardCount]);
         dealerHolder.innerHTML += cardOutput(cardCount, x);
         if (x == 0) {
-            dealerHolder.innerHTML += '<div id="cover" style="left:100px;"></div>';
+            dealerHolder.innerHTML += '<div id="cover" style="left:1000px;"></div>';
         }
         cardCount++;
         playerCard.push(cards[cardCount]);
@@ -77,7 +77,7 @@ function deal() {
 }
 
 function cardOutput(n, x) {
-    var hpos = (x > 0) ? x * 60 + 100 : 100;
+    var hpos = (x > 0) ? x * 60 + 1000 : 1000;
     return '<div class="icard ' + cards[n].icon + '" style="left:' + hpos + 'px;">  <div class="top-card suit">' + cards[n].cardnum + '<br></div>  <div class="content-card suit"></div>  <div class="bottom-card suit">' + cards[n].cardnum +
         '<br></div> </div>';
 }
