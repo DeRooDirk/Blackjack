@@ -13,7 +13,7 @@ for (let s in suits) {
             icon: suits[s],
             bgcolor: bgcolor,
             cardnum: numb[n],
-            cardalue: cardValue
+            cardvalue: cardValue
         };
         cards.push(card);
     }
