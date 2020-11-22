@@ -10,12 +10,18 @@
 
 <body>
     <div>
-        <div id="message">Press The Start Button </div>
-        <button id="btnstart" type="button" onclick="start()" class="btn">Start Button</button>
+        <div id="message">Press Start Button</div>
+        <div id="start">
+            <button id="btnstart" type="button" onclick="start()" class="btn">Start Game</button>
+        </div>
+        <div id="output">
+            Dealer Hand :
+            <div id="dealerHolder"></div>
+            Player Hand :
+            <div id="playerHolder"></div>
+        </div>
     </div>
-    <div id="output"></div>
-    <div id="dealerHolder"></div>
-    <div id="playerHolder"></div>
+
     <script src="./zoo.js"></script>
 </body>
 
