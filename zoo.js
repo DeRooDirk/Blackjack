@@ -28,13 +28,19 @@ function start() {
 }
 
 function shuffleDeck(array) {
-
+    for (let i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
 }
 
 function outputCard() {
     output.innerHTML += "<span style='color:" + cards[0].bgcolor + "'> &" + cards[0].icon + ";" + cards[0].cardnum + "</span>     ";
 }
-start();
+
 
 
 
