@@ -25,13 +25,13 @@ for (let s in suits) {
         cards.push(card);
     }
 }
-// start function
-function start() {
+
+function Start() {
     shuffleDeck(cards);
     dealNew();
 
 }
-// deal a new deck of cards 
+
 function dealNew() {
     playerCard = [];
     dealerCard = [];
@@ -39,21 +39,23 @@ function dealNew() {
     playerHolder.innerHTML = "";
     for (x = 0; x < 2; x++) {
         dealerCard.push(cards[cardCount]);
-        dealerHolder.innerHTML += cardOutput(cardCount);
+        dealerHolder.innerHTML += cardOutput(cardCount, x);
         cardCount++;
         playerCard.push(cards[cardCount]);
-        playerHolder.innerHTML += cardOutput(cardCount);
+        playerHolder.innerHTML += cardOutput(cardCount, x);
         cardCount++;
     }
     console.log(dealerCard);
     console.log(playerCard);
 
 }
-//printing to html
-function cardOutput(n) {
-    return "<span style='color:" + cards[cardCount].bgcolor + "'>" + cards[cardCount].cardnum + "&" + cards[cardCount].icon + ";</span>  ";
+
+function cardOutput(n, x) {
+    var hpos = (x > 0) ? x * 60 + 100 : 100;
+    return '<div class="icard ' + cards[n].icon + '" style="left:' + hpos + 'px;">  <div class="top-card suit">' + cards[n].cardnum + '<br></div>  <div class="content-card suit"></div>  <div class="bottom-card suit">' + cards[n].cardnum +
+        '<br></div> </div>';
 }
-// to go tru the array backwards 
+
 function shuffleDeck(array) {
     for (var i = array.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
@@ -63,7 +65,7 @@ function shuffleDeck(array) {
     }
     return array;
 }
-//printing to html 
+
 function outputCard() {
     output.innerHTML += "<span style='color:" + cards[cardCount].bgcolor + "'>" + cards[cardCount].cardnum + "&" + cards[cardCount].icon + ";</span>  ";
 }
