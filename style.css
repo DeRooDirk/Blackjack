@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: cadetblue;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    border: 2px solid lightsalmon;
+    padding: 2em;
+    border-radius: 25px;
+}
+
+#output {
+    font-size: 1.5em;
+}
+
+.clubs,
+.spades {
+    color: rgb(26, 26, 26);
+}
+
+.hearts,
+.diams {
+    color: rgb(155, 16, 16);
+}
