@@ -10,12 +10,21 @@
         font-size: 1.5em;
     }
     
+    #cover {
+        height: 170px;
+        width: 120px;
+        background-color: rgb(95, 37, 37);
+        border-radius: 10px;
+        position: absolute;
+        border: 1px solid black;
+    }
+    
     .icard {
         height: 170px;
         width: 120px;
         padding: 3px;
         border: 1px solid black;
-        background-color: white;
+        background-color: rgb(197, 184, 184);
         border-radius: 10px;
         position: absolute;
         left: 100px;
