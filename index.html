@@ -9,23 +9,30 @@
 </head>
 
 <body>
-    <div>
-        <div id="message">Press Start Button</div>
-        <div id="start">
-            <button id="btnstart" type="button" onclick="Start()" class="btn">Start Game</button>
-        </div>
-        <div id="output">
-            Dealer Hand :
-            <div id="dealerHolder"></div>
-            Player Hand :
-            <div id="playerHolder"></div>
-        </div>
-        <br><br>
-        <button onclick=" location.reload()" type="submit" id="restart-message">Restart The Game</button>
+    <h1>BlackJack Game</h1><small>Get to 21 or higher than the dealer</small>
+    <div id="start">
+        <button id="btnstart" type="button" onclick="Start()" class="btn">Start Game</button>
     </div>
+    <div class="total">Total $<span id="dollars">100</span></div>
+    <div>Bet Amount $<input type="number" id="mybet" value="5" min="1" max="100"><button id="maxbet" type="button" onclick="maxbet()" class="btn">Max Bet</button>
 
+    </div>
+    <div id="message">Press Start Button</div>
 
-    <div></div>
+    <div id="output">
+        Dealer Hand : <span id="dValue"></span>
+        <div id="dealerHolder"></div>
+        Player Hand : <span id="pValue"></span>
+        <div id="playerHolder"></div>
+        <div id="myactions">
+            <button id="btnhold" type="button" class="btn">Hold</button>
+            <button id="btnhit" type="button" class="btn">Hit</button>
+            <button id="btndouble" type="button" class="btn">Double</button>
+        </div>
+        <div>
+            <button id="btndeal" type="button" class="btn">Deal</button>
+        </div><button class="btn" onclick=" location.reload()" type="submit" id="restart-message">Restart The Game</button>
+    </div>
 
     <script src="./zoo.js"></script>
 </body>
