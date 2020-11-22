@@ -18,10 +18,32 @@ for (let s in suits) {
         cards.push(card);
     }
 }
-console.log(cards);
+
 
 function start() {
-    let randomNum = Math.floor((Math.random() * 52));
-    output.innerHTML += "<span style='color:" + cards[randomNum].bgcolor + "'> &" + cards[randomNum].icon + ";" + cards[randomNum].cardnum + "</span>     ";
+    outputCard();
+    shuffleDeck(cards);
+    outputCard();
+
 }
-ranCard();
+
+function shuffleDeck(array) {
+
+}
+
+function outputCard() {
+    output.innerHTML += "<span style='color:" + cards[0].bgcolor + "'> &" + cards[0].icon + ";" + cards[0].cardnum + "</span>     ";
+}
+start();
+
+
+
+
+
+
+/*
+
+ let randomNum = Math.floor((Math.random() * 52));
+	output.innerHTML += "<span style='color:" + cards[randomNum].bgcolor + "'> &" + cards[randomNum].icon + ";" + cards[randomNum].cardnum + "</span>     ";
+	
+	*/
