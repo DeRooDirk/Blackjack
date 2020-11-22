@@ -1,7 +1,12 @@
 var cards = [];
+var playerCard = [];
+var dealerCard = [];
+var cardCount = 0;
 var suits = ["spades", "hearts", "clubs", "diams"];
 var numb = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 var output = document.getElementById("output");
+var dealerHolder = document.getElementById("dealerHolder");
+var playerHolder = document.getElementById("playerHolder");
 for (let s in suits) {
     var suit = suits[s][0].toUpperCase();
     var bgcolor = (suit == "S" || suit == "C") ? "black" : "red";
@@ -21,10 +26,27 @@ for (let s in suits) {
 
 
 function start() {
-    outputCard();
+
     shuffleDeck(cards);
+
+    dealNew();
     outputCard();
 
+}
+
+function dealNew() {
+    playerCard = [];
+    dealerCard = [];
+    dealerHolder.innerHTML = "";
+    playerHolder.innerHTML = "";
+    for (x = 0; x < 2; x++) {
+        dealerCard.push(cards[cardCount]);
+        cardCount++;
+        playerCard.push(cards[cardCount]);
+        cardCount++;
+    }
+    console.log(dealerCard);
+    console.log(playerCard);
 }
 
 function shuffleDeck(array) {
@@ -38,7 +60,7 @@ function shuffleDeck(array) {
 }
 
 function outputCard() {
-    output.innerHTML += "<span style='color:" + cards[0].bgcolor + "'> &" + cards[0].icon + ";" + cards[0].cardnum + "</span>     ";
+    output.innerHTML += "<span style='color:" + cards[cardCount].bgcolor + "'> &" + cards[cardCount].icon + ";" + cards[cardCount].cardnum + "</span>     ";
 }
 
 
