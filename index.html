@@ -17,7 +17,8 @@
             <button id="btnstart" type="button" onclick="Start()" class="btn">Start Game</button>
         </div>
         <div class="total">Total $<span id="dollars">100</span></div>
-        <div>Bet Amount $<input type="number" id="mybet" value="5" min="1" max="100"><button id="maxbet" type="button" onclick="maxbet()" class="btn">Max Bet</button>
+        <div>Bet Amount $<input type="number" id="mybet" value="5" min="1" max="100">
+            <button id="maxbet" type="button" onclick="maxbet()" class="btn">Max Bet</button>
 
         </div>
         <div id="message">Press Start Button</div>
@@ -28,13 +29,15 @@
             Player Hand : <span id="pValue"></span>
             <div id="playerHolder"></div>
             <div id="myactions">
-                <button id="btnhold" type="button" class="btn">Hold</button>
-                <button id="btnhit" type="button" class="btn">Hit</button>
-                <button id="btndouble" type="button" class="btn">Double</button>
+                <button id="btnhold" type="button" onclick="cardAction('hold')" class="btn">Hold</button>
+                <button id="btnhit" type="button" onclick="cardAction('hit')" class="btn">Hit</button>
+                <button id="btndouble" type="button" onclick="cardAction('double')" class="btn">Double</button>
             </div>
             <div>
-                <button id="btndeal" type="button" class="btn">Deal</button>
-            </div><button class="btn" onclick=" location.reload()" type="submit" id="restart-message">Restart The Game</button>
+                <button id="btndeal" type="button" onclick="dealNew()" class="btn">Deal</button>
+                <button class="btn" onclick=" location.reload()" type="submit" id="restart-message">Restart The Game</button>
+            </div>
+
         </div>
     </div>
 
