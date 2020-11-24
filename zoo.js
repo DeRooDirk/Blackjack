@@ -16,7 +16,7 @@ let dealerHolder = document.getElementById('dealerHolder');
 let playerHolder = document.getElementById('playerHolder');
 let pValue = document.getElementById('pValue');
 let dValue = document.getElementById('dValue');
-let dollarValue = document.getElementById('dollars');
+let dollarealValue = document.getElementById('dollars');
 //bet amaount
 document.getElementById('mybet').onchange = function() {
     if (this.value < 0) {
@@ -50,7 +50,7 @@ function Start() {
     shuffleDeck(cards);
     dealNew();
     document.getElementById('start').style.display = 'none';
-    dollarValue.innerHTML = mydollars;
+    dollarealValue.innerHTML = mydollars;
 }
 
 function dealNew() {
@@ -92,11 +92,11 @@ function deal() {
         playerHolder.innerHTML += cardOutput(cardCount, x);
         redeal();
     }
-    let playervalue = checktotal(playerCard);
-    if (playervalue == 21 && playerCard.length == 2) {
+    let playerealValue = checktotal(playerCard);
+    if (playerealValue == 21 && playerCard.length == 2) {
         playend();
     }
-    pValue.innerHTML = playervalue;
+    pValue.innerHTML = playerealValue;
 }
 
 function cardOutput(n, x) {
@@ -160,55 +160,55 @@ function playend() {
     document.getElementById('maxbet').disabled = false;
     message.innerHTML = "Game Over<br>";
     let payoutJack = 1;
-    let dealervalue = checktotal(dealerCard);
-    dValue.innerHTML = dealervalue;
+    let dealerealValue = checktotal(dealerCard);
+    dValue.innerHTML = dealerealValue;
 
-    while (dealervalue < 17) {
+    while (dealerealValue < 17) {
         dealerCard.push(cards[cardCount]);
         dealerHolder.innerHTML += cardOutput(cardCount, (dealerCard.length - 1));
         redeal();
-        dealervalue = checktotal(dealerCard);
-        dValue.innerHTML = dealervalue;
+        dealerealValue = checktotal(dealerCard);
+        dValue.innerHTML = dealerealValue;
     }
 
     //WHo won???
-    let playervalue = checktotal(playerCard);
-    if (playervalue == 21 && playerCard.length == 2) {
+    let playerealValue = checktotal(playerCard);
+    if (playerealValue == 21 && playerCard.length == 2) {
         message.innerHTML = "Player Blackjack";
         payoutJack = 1.5;
     }
 
     let betvalue = Number(document.getElementById('mybet').value) * payoutJack;
-    if ((playervalue < 22 && dealervalue < playervalue) || (dealervalue > 21 && playervalue < 22)) {
+    if ((playerealValue < 22 && dealerealValue < playerealValue) || (dealerealValue > 21 && playerealValue < 22)) {
         message.innerHTML += '<span style="color:green;">You WIN! You won $' + betvalue + '</span>';
         mydollars = mydollars + (betvalue * 2);
-    } else if (playervalue > 21) {
-        message.innerHTML += '<span style="color:red;">Dealer Wins! You lost $' + betvalue + '</span>';
-    } else if (playervalue == dealervalue) {
+    } else if (playerealValue > 21) {
+        message.innerHTML += '<span style="color:red; margin:10px">Dealer Wins! You lost $' + betvalue + '</span>';
+    } else if (playerealValue == dealerealValue) {
         message.innerHTML += '<span style="color:blue;">PUSH</span>';
         mydollars = mydollars + betvalue;
     } else {
         message.innerHTML += '<span style="color:red;">Dealer Wins! You lost $' + betvalue + '</span>';
     }
-    pValue.innerHTML = playervalue;
-    dollarValue.innerHTML = mydollars;
+    pValue.innerHTML = playerealValue;
+    dollarealValue.innerHTML = mydollars;
 }
 
 function checktotal(arr) {
-    let rValue = 0;
+    let realValue = 0;
     let aceAdjust = false;
     for (let i in arr) {
         if (arr[i].cardnum == 'A' && !aceAdjust) {
             aceAdjust = true;
-            rValue = rValue + 10;
+            realValue = realValue + 10;
         }
-        rValue = rValue + arr[i].cardvalue;
+        realValue = realValue + arr[i].cardvalue;
     }
 
-    if (aceAdjust && rValue > 21) {
-        rValue = rValue - 10;
+    if (aceAdjust && realValue > 21) {
+        realValue = realValue - 10;
     }
-    return rValue;
+    return realValue;
 }
 
 function shuffleDeck(array) {
